@@ -54,17 +54,17 @@ interface Product {
 }
 
 function getMostExpensiveProduct(products: Product[]): Product | null {
-  let expensiveProduct: Product = products[0];
   if (products.length === 0) {
     return null;
   } else {
+    let expensiveProduct: Product = products[0];
     products.forEach((product) => {
       if (product.price > expensiveProduct.price) {
         expensiveProduct = product;
       }
     });
+    return expensiveProduct;
   }
-  return expensiveProduct;
 }
 
 enum Day {
